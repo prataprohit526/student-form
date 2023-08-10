@@ -1,13 +1,13 @@
-import React from "react";
-import { decodeToken } from "react-jwt";
-import { NavLink, Link } from "react-router-dom";
-import "./style.css";
+import React from 'react';
+import { decodeToken } from 'react-jwt';
+import { NavLink, Link } from 'react-router-dom';
+import './style.css';
 function Sidebar() {
-  const data = decodeToken(localStorage.getItem("token"));
+  const data = decodeToken(localStorage.getItem('token'));
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="dashboard">
+        <Link className="navbar-brand" to="/profile/educator">
           <img
             className="profile-image"
             referrerPolicy="no-referrer"
@@ -23,8 +23,7 @@ function Sidebar() {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,15 +32,13 @@ function Sidebar() {
               <NavLink
                 className="nav-link text-light d-inline-block mx-2"
                 aria-current="page"
-                to="/profile/educator"
-              >
+                to="/profile/educator">
                 Home
               </NavLink>
               <NavLink
                 className="nav-link text-light d-inline-block mx-2"
                 aria-current="page"
-                to="/profile/educator/quiz/create"
-              >
+                to="/profile/educator/quiz/create">
                 Create Quiz
               </NavLink>
             </li>
@@ -52,8 +49,7 @@ function Sidebar() {
                   localStorage.clear();
                 }}
                 aria-current="page"
-                to="/"
-              >
+                to="/">
                 Logout
               </NavLink>
             </li>

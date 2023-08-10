@@ -1,14 +1,14 @@
-import React from "react";
-import { decodeToken } from "react-jwt";
-import { NavLink, Link } from "react-router-dom";
-import "./style.css";
+import React from 'react';
+import { decodeToken } from 'react-jwt';
+import { NavLink, Link } from 'react-router-dom';
+import './style.css';
 function Sidebar() {
-  const data = decodeToken(localStorage.getItem("token"));
+  const data = decodeToken(localStorage.getItem('token'));
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="dashboard">
+        <Link className="navbar-brand" to="/profile/student">
           <img
             className="profile-image"
             referrerPolicy="no-referrer"
@@ -24,8 +24,7 @@ function Sidebar() {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,15 +33,13 @@ function Sidebar() {
               <NavLink
                 className="nav-link text-light d-inline-block mx-2"
                 aria-current="page"
-                to="/profile/student"
-              >
+                to="/profile/student">
                 Home
               </NavLink>
               <NavLink
                 className="nav-link text-light d-inline-block mx-2"
                 aria-current="page"
-                to="/profile/student/quiz/list"
-              >
+                to="/profile/student/quiz/list">
                 Quizes
               </NavLink>
             </li>
@@ -50,11 +47,10 @@ function Sidebar() {
               <NavLink
                 className="nav-link text-ligth d-inline-block mx-2"
                 onClick={() => {
-                  localStorage.removeItem("token");
+                  localStorage.removeItem('token');
                 }}
                 aria-current="page"
-                to="/"
-              >
+                to="/">
                 Logout
               </NavLink>
             </li>
