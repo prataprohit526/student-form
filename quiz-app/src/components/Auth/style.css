@@ -1,0 +1,13 @@
+.login{
+    width: 70%;
+    height: 30px
+}
+
+.redirect{
+    height:100vh;
+    background-image: url('../../images/sideimage.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
